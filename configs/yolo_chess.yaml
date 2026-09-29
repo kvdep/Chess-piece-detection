@@ -1,0 +1,20 @@
+path: datasets
+train: images/train
+val: images/test
+test: images/test
+
+nc: 12
+
+names:
+  0: bishop_black
+  1: bishop_white
+  2: king_black
+  3: king_white
+  4: knight_black
+  5: knight_white
+  6: pawn_black
+  7: pawn_white
+  8: queen_black
+  9: queen_white
+  10: rook_black
+  11: rook_white

@@ -1,0 +1,25 @@
+# Faster R-CNN ResNet50-FPN Configuration for Chess Piece Detection
+model:
+  name: "fasterrcnn_resnet50_fpn"
+  num_classes: 13       # 12 piece classes + 1 background class (id 0)
+  input_size: [500, 500]
+  pretrained_backbone: true
+
+training:
+  epochs: 10
+  batch_size: 4         # Kept small (4) due to GPU memory constraints
+  optimizer:
+    name: "AdamW"
+    lr: 0.0001
+    weight_decay: 0.0005
+  scheduler:
+    name: "StepLR"
+    step_size: 3
+    gamma: 0.1
+
+dataset:
+  train_images: "datasets/images/train"
+  train_labels: "datasets/labels/train"
+  val_images: "datasets/images/test"
+  val_labels: "datasets/labels/test"
+  cache_file: "cache_frcnn_train.pt"

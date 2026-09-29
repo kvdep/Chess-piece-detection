@@ -1,0 +1,32 @@
+# YOLOv11 Training Hyperparameters for Chess Piece Detection
+# Custom loss weighting to resolve class confusion on hybrid datasets
+
+# Loss Gains
+box: 1.5               # Bounding box regression loss gain (reduced because synthetic data provides clean centers)
+cls: 5.0               # Classification loss gain (increased 10x over default 0.5 to prioritize hard class distinctions)
+dfl: 1.0               # Distribution Focal Loss gain
+
+# Optimizer & Learning Rate
+lr0: 0.01              # Initial learning rate (SGD=1E-2, Adam=1E-3)
+lrf: 0.01              # Final learning rate factor (lr0 * lrf)
+momentum: 0.937        # SGD momentum / Adam beta1
+weight_decay: 0.0005   # Optimizer weight decay
+warmup_epochs: 3.0     # Warmup epochs
+warmup_momentum: 0.8   # Warmup initial momentum
+warmup_bias_lr: 0.1    # Warmup initial bias lr
+
+# Augmentation Parameters
+hsv_h: 0.015           # Image HSV-Hue augmentation (fraction)
+hsv_s: 0.7             # Image HSV-Saturation augmentation (fraction)
+hsv_v: 0.4             # Image HSV-Value augmentation (fraction)
+degrees: 10.0          # Image rotation (+/- deg)
+translate: 0.1         # Image translation (+/- fraction)
+scale: 0.2             # Image scale (+/- gain)
+shear: 2.0             # Image shear (+/- deg)
+perspective: 0.0005    # Image perspective (+/- fraction)
+flipud: 0.0            # Image flip up-down (probability)
+fliplr: 0.5            # Image flip left-right (probability)
+mosaic: 1.0            # Mosaic augmentation (probability)
+mixup: 0.2             # Mixup augmentation (probability)
+copy_paste: 0.0        # Segment copy-paste (probability)
+close_mosaic: 10       # Disable mosaic augmentation for final N epochs

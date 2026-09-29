@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Datasets and heavy media (only at root)
+/datasets/
+/data/
+/real_set/
+/test_dataset/
+/TEST_real_set/
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# YOLO / Training runs
+/runs/
+*.log
+
+# Caches
+*.cache
+*.pt
+!weights/best.pt
+*.pth
+
+# Intermediate dump and extraction artifacts
+coursework_text.txt
+uns_text.txt
+notebook_dump.txt
+/extracted_assets/
+*.blend1
+
+# Ignore original large base64 notebook and root pdfs
+*.ipynb
+!notebooks/chess_piece_detection_experiments.ipynb
+*.pdf
+!docs/*.pdf
+
+# IDE and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
